@@ -1,0 +1,13 @@
+.cabecera{
+    background-color: #14274e;
+    border-color: #14274e;
+}
+
+.cabecera input{
+    border-radius: 5px;
+    border-color: #14274e;
+    height: 40px;
+    width: 500px;
+    text-align: center;
+    font-size: 15px;
+}

@@ -1,0 +1,12 @@
+.item{
+    min-height: "600ox";
+    min-width: "500px";
+    margin: "1em";
+    text-align: "center";
+    box-sizing: "border box";
+    background: "#d0e8f2";
+    border-color: "#d0e8f2";
+}
+.media{
+    height: "300px";
+}

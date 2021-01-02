@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import './App.css';
+//Importamos los componentes a mostrar
 import SearchBar from './components/searchBar/searchBar.js';
-import Catalogo from './components/catalogo/catalogo.js'
+import Catalogo from './components/catalogo/catalogo.js';
+//Importamos Axios para hacer las peticiones la servidor
 import axios from 'axios';
 
 class App extends Component {

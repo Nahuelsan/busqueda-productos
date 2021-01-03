@@ -89,18 +89,9 @@ function Catalogo({products, conditionFilter, filterPrice, paginaSiguiente, pagi
                         <label htmlFor="checkbox4"> Usado </label>
                     </div>
                 </div>
-{/*                 {
-                (state.priceFilter === null && state.conditionFilter === null) &&
-                <button onClick={() => alert('Selecciona un filtro')}> Filtrar</button>
-                } */}
-{/*                 
-                (state.priceFilter !== null || state.conditionFilter !== null) && */}
+
                 <Button variant="outlined" onClick={submitFilter}> Filtrar </Button>
-                
-{/*                 {
-                (state.price_asc === true || state.price_desc === true || state.new === true || state.used === true) &&
-                    <button>Quitar filtros</button>
-                } */}
+
             </div>
             <Grid container spacing={10} justify="center">   
             {products.map(p => <ProductCard key={p.id} product={p} />) }

@@ -1,10 +1,7 @@
 const server = require('express').Router();
 const axios = require('axios');
 
-var cache = {}
 
-	
-	
 //Peticion a la api MeLi
 server.get('/search/:products/:pagina', (req, res, next) => {
 	const termino = req.params.products;

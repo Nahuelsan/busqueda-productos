@@ -7,6 +7,7 @@ import Catalogo from './components/catalogo/catalogo.js';
 import axios from 'axios';
 
 class App extends Component {
+
   state = {
     termino: '',
     pagina: 0,
@@ -22,7 +23,7 @@ class App extends Component {
     
     let pagina = this.state.pagina - 10;
     // leer si la pagina es 0, ya no ir hacia atras
-    if(this.state.pagina === 0 && this.state.pedir === 0){ return alert("Sin mas resultado")};
+    if(this.state.pagina === 0 && this.state.pedir === 0){ return alert("Esta es la primera pagina")};
     //leer state de la pagina actual
     if(this.state.pedir >= 50 && this.state.pagina === 0){
       this.setState({
@@ -40,8 +41,24 @@ class App extends Component {
     window.scroll(0,0)
   }
 
-  paginaSiguiente = () =>{
+  paginaSiguiente = (products) =>{
     window.scroll(0,0)
+    //Si esta activado el filtro 
+    if(this.state.filterActive === true){
+      let pagina = this.state.pagina + 10;
+      if(products.length < 10){
+        this.setState({
+          pedir: this.state.pedir + 50
+        }, () => {
+          this.consultarApi();
+        });
+      }
+      this.setState({
+        pagina
+      },() => {
+        this.render();
+      }); 
+    }
     let pagina = this.state.pagina + 10;
     //agregar el cambio al state
     if(pagina === 50) {
@@ -57,7 +74,7 @@ class App extends Component {
       this.render();
     }); 
   }
-
+  //
   consultarApi = () => {
     const termino = this.state.termino;
       axios(`http://localhost:3001/api/search/${termino}/${this.state.pedir}`)
@@ -74,7 +91,7 @@ class App extends Component {
       );
 
   } 
-
+  //Seteamos estados en el caso que tuvieran 
   filters = (conditionFilter, priceFilter) => {
     this.setState({
       conditionFilter: conditionFilter,
@@ -86,38 +103,33 @@ class App extends Component {
       this.render()
     }) 
   }
+
   status = () => {
-    switch(this.state.conditionFilter){
-      case 'new':
-        this.setState({
-          productsFiltered: this.state.products.filter(p => p.condition === 'new')
-        })
-        break;
-      case 'used':
-        this.setState({
-          productsFiltered: this.state.products.filter(p => p.condition === 'used')
-        })
-        break;
-      default:
-        break
+    if(this.state.conditionFilter === 'new'){
+      console.log('new')
+      this.setState({
+        productsFiltered: this.state.products.filter(p => p.condition === 'new')
+      })
+    }
+    if(this.state.conditionFilter === 'used'){
+      console.log('used')
+      this.setState({
+        productsFiltered: this.state.products.filter(p => p.condition === 'used')
+      })
     }
   }
 
   price = () => {
     const product = [...this.state.productsFiltered];
-    switch(this.state.filterPrice){
-      case 'price_asc':
-        this.setState({
-          productsFiltered: product.sort((a, b) => (a.price < b.price ? 1 : a.price > b.price ? -1 : 0))
-        })
-        break
-      case 'price_desc':
-        this.setState({
-          productsFiltered: product.sort((a, b) => (a.price > b.price ? 1 : a.price < b.price ? -1 : 0))
-        })
-        break
-      default:
-        break
+    if(this.state.filterPrice === 'price_asc'){
+      this.setState({
+        productsFiltered: product.sort((a, b) => (a.price < b.price ? 1 : a.price > b.price ? -1 : 0))
+      })
+    }
+    if(this.state.filterPrice === 'price_desc'){
+      this.setState({
+        productsFiltered: product.sort((a, b) => (a.price > b.price ? 1 : a.price < b.price ? -1 : 0))
+      })
     }
   }
   
@@ -153,6 +165,7 @@ class App extends Component {
               conditionFilter={this.state.conditionFilter}
               paginaAnterior = {this.paginaAnterior}
               paginaSiguiente = {this.paginaSiguiente}
+              pagina = {this.state.pagina}
             />
           }
       </div>

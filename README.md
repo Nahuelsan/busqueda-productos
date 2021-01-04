@@ -4,7 +4,7 @@
 
 
 ## Funciones disponibles
-- Busuqeda
+- Busqeda
 - Filtrado por precio
 - Filtrado por estado
 - Descripcion

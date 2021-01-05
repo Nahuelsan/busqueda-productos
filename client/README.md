@@ -16,6 +16,16 @@ Esta compuesta por un estado que contiene:<br />
 `Conditionfilter` usamos para saber si el usuario necesita usar filtros por estado.<br />
 `FilterActive` usamos para saber si hay un filtro activado y renderizamos el componente Catalogo con el array ProductsFiltered<br />
 
+
+`Funciones` <br />
+`paginaAnterior` En esta funcion verificamo que en la pagina que estemos posicionado sea la ultima si es el caso lanzamos un alert al cliente, o que hayamos hecho consultas a la api con la variable pedir si es el caso le restamos 50, que es lo que el offset de MeLi nos deja consultar 50 maximo, y hacemos llamado a `consultarApi`.<br />
+`paginaSiguiente`
+`consultarApi`
+`filters`
+`status`
+`price`
+`datosBusqueda`
+
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 

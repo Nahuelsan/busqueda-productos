@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import ProductCard from '../productCard';
 import { Grid, Button } from '@material-ui/core';
 import style from './catalogo.module.css';
-function Catalogo({products, conditionFilter, filterPrice, paginaSiguiente, paginaAnterior, filters}){
-
+function Catalogo({products, conditionFilter, filterPrice, paginaSiguiente, paginaAnterior, filters, pagina}){
     const [state, setState] = useState({
         price_asc: (filterPrice === 'price_asc') ? true : false,
         price_desc: (filterPrice === 'price_desc') ? true : false,
@@ -90,31 +89,18 @@ function Catalogo({products, conditionFilter, filterPrice, paginaSiguiente, pagi
                         <label htmlFor="checkbox4"> Usado </label>
                     </div>
                 </div>
-{/*                 {
-                (state.priceFilter === null && state.conditionFilter === null) &&
-                <button onClick={() => alert('Selecciona un filtro')}> Filtrar</button>
-                } */}
-{/*                 
-                (state.priceFilter !== null || state.conditionFilter !== null) && */}
+
                 <Button variant="outlined" onClick={submitFilter}> Filtrar </Button>
-                
-{/*                 {
-                (state.price_asc === true || state.price_desc === true || state.new === true || state.used === true) &&
-                    <button>Quitar filtros</button>
-                } */}
+
             </div>
-            <Grid container spacing={24} justify="center">   
+            <Grid container spacing={10} justify="center">   
             {products.map(p => <ProductCard key={p.id} product={p} />) }
             </Grid>
-            <Button variant="outlined" color="secondary" onClick={paginaAnterior}>Pagina Anterior</Button>
-            {
-                (products.length === 10) &&
-                <Button variant="outlined" color="primary" onClick={paginaSiguiente} >Pagina Siguiente</Button>
-            }
-            {
-                (products.length < 10) &&
-                <Button variant="outlined" color="primary" onClick={() => alert('Sin mas resultados')}>Pagina Siguiente</Button>
-            }
+            <br/>
+            <br/>
+            <Button variant="outlined" color="secondary" onClick={paginaAnterior}>Pagina Anterior</Button>             
+            <Button variant="outlined" color="primary" onClick={() => paginaSiguiente(products)}>Pagina Siguiente</Button>
+            
             
         </div>
     )

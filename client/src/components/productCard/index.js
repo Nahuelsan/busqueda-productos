@@ -31,7 +31,7 @@ item:{
     borderColor: "#ff8585",
 },
 media:{
-    minHeight: "700px",
-    minWidth: "600px",
+    minHeight: "500px",
+    minWidth: "500px",
 }
 })(ProductCard);

@@ -1,5 +1,3 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
 ## Desde el Front End tenemos 3 + 1 componentes
 
 ### 1 Componente Padre

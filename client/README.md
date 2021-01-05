@@ -17,7 +17,7 @@ Esta compuesta por un estado que contiene:<br />
 `FilterActive` usamos para saber si hay un filtro activado y renderizamos el componente Catalogo con el array ProductsFiltered<br />
 
 
-###Funciones
+### Funciones
 
 `paginaAnterior` En esta funcion verificamo que en la pagina que estemos posicionado sea la ultima si es el caso lanzamos un alert al cliente, o que hayamos hecho consultas a la api con la variable pedir si es el caso le restamos 50, que es lo que el offset de MeLi nos deja consultar 50 maximo, y hacemos llamado a `consultarApi`.<br />
 `paginaSiguiente` Aquí hacemos una pregunta que si tenemos activados los filtros y si los products que recibimos de catalogo son menor a 10 para saber si hacer un consulta a la API o mostrar los productos restantes en caso contrario suma 10 a el estado pagina y llama a la funcion por defecto render <br />

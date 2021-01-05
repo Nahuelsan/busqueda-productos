@@ -4,7 +4,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### 1 Componente Padre
 
-Encargado de renderizar los componentes **SearchBar y Catalogo
+Encargado de renderizar los componentes ### `SearchBar y Catalogo`
 
 Esta compuesta por un estado que contiene:
 Termino: la palabra clave para la busqueda del producto en cuestion.

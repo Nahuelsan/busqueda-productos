@@ -27,7 +27,7 @@ Requerimos `Axios` y `Express` con la funcion `Router()` <br />
 
 Solicitamos las peticiones que el usuario necesita recibimos como parametro palabra clave y un offset que nos delimita los si quiere los productos del [0-50] [50-100] ... [n-n+50] <br />
 Al recibir lo devolvemos al usuario un JSON con 50 productos relacionados a la palabra clave que necesita
-
+```
 server.get('/search/:products/:pagina', (req, res, next) => {
 	const termino = req.params.products;
 	const pagina = req.params.pagina;
@@ -38,6 +38,6 @@ server.get('/search/:products/:pagina', (req, res, next) => {
 		.then(r => res.send(r.data))
 		.catch(next)
 });
-
+```
 
 

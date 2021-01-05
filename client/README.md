@@ -1,18 +1,20 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Desde el Front End tenemos 3 + 1 componentes
 
-In the project directory, you can run:
+### 1 Componente Padre
 
-### `yarn start`
+Encargado de renderizar los componentes ##SearchBar y Catalogo
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
+Esta compuesta por un estado que contiene:
+Termino: la palabra clave para la busqueda del producto en cuestion.
+Pagina: para conctrolar la paginación los productos.
+Pedir: controlar el offset de la request api.
+Products: usado para almacenar los productos recibido desde la API.
+ProductsFiltered: usado para almacenar los productos con filtros(precio y/o estado).
+FilterPrice: usamos para saber si el usuario necesita usar filtros por precio.
+Conditionfilter: usamos para saber si el usuario necesita usar filtros por estado.
+FilterActive: usamos para saber si hay un filtro activado y renderizamos el componente Catalogo con el array ProductsFiltered
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.

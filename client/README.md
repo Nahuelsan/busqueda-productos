@@ -6,15 +6,15 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Encargado de renderizar los componentes ### `SearchBar y Catalogo`
 
-Esta compuesta por un estado que contiene:
-Termino: la palabra clave para la busqueda del producto en cuestion.
-Pagina: para conctrolar la paginación los productos.
-Pedir: controlar el offset de la request api.
-Products: usado para almacenar los productos recibido desde la API.
-ProductsFiltered: usado para almacenar los productos con filtros(precio y/o estado).
-FilterPrice: usamos para saber si el usuario necesita usar filtros por precio.
-Conditionfilter: usamos para saber si el usuario necesita usar filtros por estado.
-FilterActive: usamos para saber si hay un filtro activado y renderizamos el componente Catalogo con el array ProductsFiltered
+Esta compuesta por un estado que contiene:<br />
+Termino: la palabra clave para la busqueda del producto en cuestion.<br />
+Pagina: para conctrolar la paginación los productos.<br />
+Pedir: controlar el offset de la request api.<br />
+Products: usado para almacenar los productos recibido desde la API.<br />
+ProductsFiltered: usado para almacenar los productos con filtros(precio y/o estado).<br />
+FilterPrice: usamos para saber si el usuario necesita usar filtros por precio.<br />
+Conditionfilter: usamos para saber si el usuario necesita usar filtros por estado.<br />
+FilterActive: usamos para saber si hay un filtro activado y renderizamos el componente Catalogo con el array ProductsFiltered<br />
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.

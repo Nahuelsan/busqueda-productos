@@ -27,8 +27,30 @@ Esta compuesta por un estado que contiene:<br />
 `price` Creamos una constante  con los `ProductsFiltered` ya que estos se modifican con la funcion de ordenamiento de `sort` la cual aplicamos segun lo que el usuario desee descendente o ascendente <br />
 `datosBusqueda` Recibimos del `SearchBar`, la palabra clave para la busqueda la seteamos en el estado y llamamos a `consultarApi` <br />
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+## Catalogo
+
+En `Catalogo` importamos el componenten `Product Card` en el cual renderizamos los datos recibidos desde la API que nos manda el componente padre, utilizamos Material UI para dar estilo. <br />
+
+Tenermos un estado que contiene: 
+`price_asc` recibimos filterPrice si este es price_asc seteamos en true si no false (Usado para animar los botones de select).<br />
+`price_desc`recibimos filterPrice si este es price_desc seteamos en true si no false (Usado para animar los botones de select).<br />
+`new` recibimos conditionFilter si este es new seteamos en true si no false (Usado para animar los botones de select).<br />
+`used` recibimos conditionFilter si este es false seteamos en true si no false (Usado para animar los botones de select).<br />
+`priceFilter` 
+`conditionFilter`
+
+
+
+
+
+
+
+
+
+
+
+
 
 ### `yarn build`
 

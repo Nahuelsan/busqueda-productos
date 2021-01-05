@@ -17,14 +17,15 @@ Esta compuesta por un estado que contiene:<br />
 `FilterActive` usamos para saber si hay un filtro activado y renderizamos el componente Catalogo con el array ProductsFiltered<br />
 
 
-`Funciones` <br />
+###Funciones
+
 `paginaAnterior` En esta funcion verificamo que en la pagina que estemos posicionado sea la ultima si es el caso lanzamos un alert al cliente, o que hayamos hecho consultas a la api con la variable pedir si es el caso le restamos 50, que es lo que el offset de MeLi nos deja consultar 50 maximo, y hacemos llamado a `consultarApi`.<br />
-`paginaSiguiente`
-`consultarApi`
-`filters`
-`status`
-`price`
-`datosBusqueda`
+`paginaSiguiente` Aquí hacemos una pregunta que si tenemos activados los filtros y si los products que recibimos de catalogo son menor a 10 para saber si hacer un consulta a la API o mostrar los productos restantes en caso contrario suma 10 a el estado pagina y llama a la funcion por defecto render <br />
+`consultarApi` Hacemos el pedido axios al server seteamos los productos recibidos en products y productsFiltered, seteamos pagina en 0, luego ejecutamos los filtros si estos estan activados <br />
+`filters` Esta funcion recibe parametros desde `Catalogo` que son los filtros que el usuario activo en ese componente, los seateamos en el estado del componente padre, activamos el `FilterActive` ejecutamos los filtros y luego la funcion render <br />
+`status` Ejecutamos un filtrado de los productos y los seteamos en `ProductsFiltered` segun el filtro que el usuario selecciono<br />
+`price` Creamos una constante  con los `ProductsFiltered` ya que estos se modifican con la funcion de ordenamiento de `sort` la cual aplicamos segun lo que el usuario desee descendente o ascendente <br />
+`datosBusqueda` Recibimos del `SearchBar`, la palabra clave para la busqueda la seteamos en el estado y llamamos a `consultarApi` <br />
 
 Launches the test runner in the interactive watch mode.<br />
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.

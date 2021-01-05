@@ -31,8 +31,10 @@ Al recibir lo devolvemos al usuario un JSON con 50 productos relacionados a la p
 server.get('/search/:products/:pagina', (req, res, next) => {
 	const termino = req.params.products;
 	const pagina = req.params.pagina;
-	const url = `https://api.mercadolibre.com/sites/MLA/search?q=${termino}&nano&limit=50&offset=${pagina}`;
+	
 	//Pedimos los productos
+	const url = `https://api.mercadolibre.com/sites/MLA/search?q=${termino}&nano&limit=50&offset=${pagina}`;
+	
 	//Y los devolvemos
 	axios(url)
 		.then(r => res.send(r.data))
